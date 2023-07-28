@@ -1,0 +1,15 @@
+{
+  "name": "@topmonks/valvebot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test -w @kogen/kogen-ui"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "package/*",
+    "package/outpost/*"
+  ]
+}
