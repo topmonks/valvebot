@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ts-proto": "1.156.1"
+    "ts-proto": "1.156.2"
   }
 }
