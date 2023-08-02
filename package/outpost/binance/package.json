@@ -2,10 +2,10 @@
   "name": "@topmonks/valvebot-outpost-binance",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node"
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node",
+    "build": "rm -rf dist && tsc --build"
   },
   "author": "",
   "license": "ISC",

@@ -1,0 +1,14 @@
+{
+    "files": [],
+    "references": [
+        {
+            "path": "package/hub"
+        },
+        {
+            "path": "package/outpost/binance"
+        },
+        {
+            "path": "package/protobuf"
+        }
+    ]
+}

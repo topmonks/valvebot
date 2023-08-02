@@ -1,19 +1,23 @@
 import { Price } from "@topmonks/valvebot-protobuf/generated/ts/price";
+import { Subscriber } from "zeromq";
 
 const p = Price.create({ price: "1" });
 
-import { Reply } from "zeromq";
+async function run() {
+  const sock = new Subscriber();
 
-async function runServer() {
-  const sock = new Reply();
+  await sock.bind("tcp://127.0.0.1:3000");
+  sock.subscribe("kitty cats");
+  console.log("Subscriber connected to port 3000");
 
-  await sock.bind("tcp://*:5555");
-
-  for await (const [msg] of sock) {
-    console.log("Received " + ": [" + msg.toString() + "]");
-    await sock.send(Price.encode(p).finish());
-    // Do some 'work'
+  for await (const [topic, msg] of sock) {
+    console.log(
+      "received a message related to:",
+      topic,
+      "containing message:",
+      msg,
+    );
   }
 }
 
-runServer();
+run();

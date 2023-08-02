@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node"
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node",
+    "build": "rm -rf dist && tsc --build"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,6 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
-    "zeromq": "^6.0.0-beta.17"
+    "zeromq": "6.0.0-beta.17"
   }
 }

@@ -1,20 +1,19 @@
 import { Price } from "@topmonks/valvebot-protobuf/generated/ts/price";
-import { Request } from "zeromq";
+import { Dealer, Publisher } from "zeromq";
 
-async function runClient() {
-  console.log("Connecting to hello world server…");
+async function run() {
+  const sock = new Publisher();
 
-  //  Socket to talk to server
-  const sock = new Request();
-  sock.connect("tcp://localhost:5555");
+  sock.connect("tcp://127.0.0.1:3000");
+  console.log("Publisher bound to port 3000");
 
-  for (let i = 0; i < 10; i++) {
-    console.log("Sending Hello ", i);
-    await sock.send("Hello");
-    const [result] = await sock.receive();
-    const p = Price.decode(result);
-    console.log("Received ", p);
+  while (true) {
+    console.log("sending a multipart message envelope");
+    await sock.send(["kitty cats", "meow!"]);
+    await new Promise((resolve) => {
+      setTimeout(resolve, 500);
+    });
   }
 }
 
-runClient();
+run();
