@@ -1,4 +1,4 @@
-import { Price } from "@topmonks/valvebot-protobuf/generated/ts/price";
+import { Price } from "@topmonks/valvebot-protobuf";
 import { Subscriber } from "zeromq";
 
 const p = Price.create({ price: "1" });

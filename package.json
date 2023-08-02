@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test --ws --if-present",
-    "build": "rm -rf package/**/*/dist/ package/**/*/tsconfig.tsbuildinfo && tsc --build"
+    "build": "tsc --build --clean && tsc --build"
   },
   "author": "",
   "license": "ISC",

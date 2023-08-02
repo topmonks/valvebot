@@ -30,7 +30,7 @@ COPY --from=ts-compiler /usr/app/package/protobuf/package.json ./package/protobu
 
 COPY --from=ts-compiler /usr/app/package/hub/dist ./package/hub/dist/
 COPY --from=ts-compiler /usr/app/package/outpost/binance/dist ./package/outpost/binance/dist/
-COPY --from=ts-compiler /usr/app/package/protobuf ./package/protobuf/
+COPY --from=ts-compiler /usr/app/package/protobuf/dist ./package/protobuf/dist/
 RUN npm install --omit=dev
 
 CMD ["index.js"]
