@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "../../",
     "incremental": true,
     "target": "es2020",
     "module": "commonjs",
@@ -12,5 +13,11 @@
     "forceConsistentCasingInFileNames": true,
     "composite": true,
     "allowJs": true
+  },
+  "ts-node": {
+    "require": [
+      "dotenv/config",
+      "tsconfig-paths/register"
+    ]
   }
 }

@@ -9,6 +9,9 @@
         },
         {
             "path": "package/protobuf"
+        },
+        {
+            "path": "package/lib"
         }
     ]
 }

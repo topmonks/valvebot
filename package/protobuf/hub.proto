@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+enum HubMessageType {
+  HUB_MESSAGE_TYPE_UNSPECIFIED = 0;
+  HUB_MESSAGE_TYPE_HEARTBEAT = 1;
+}
+
+message HubMessage {
+  HubMessageType type = 1;
+}

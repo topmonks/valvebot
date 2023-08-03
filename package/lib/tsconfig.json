@@ -3,19 +3,10 @@
   "references": [
     {
       "path": "../protobuf"
-    },
-    {
-      "path": "../lib"
     }
   ],
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist"
-  },
-  "ts-node": {
-    "require": [
-      "dotenv/config",
-      "tsconfig-paths/register"
-    ]
   }
 }

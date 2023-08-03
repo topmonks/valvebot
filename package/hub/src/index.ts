@@ -1,23 +1,47 @@
-import { Price } from "@topmonks/valvebot-protobuf";
-import { Subscriber } from "zeromq";
+import { Router } from "zeromq";
+import {
+  OutpostMessage,
+  OutpostMessageType,
+  PriceMessage,
+} from "@topmonks/valvebot-protobuf";
+import { getEnvValue } from "@topmonks/valvebot-lib";
 
-const p = Price.create({ price: "1" });
+const senders: { [key: string]: Buffer } = {};
 
-async function run() {
-  const sock = new Subscriber();
+let _socket: Router;
+async function getSocket() {
+  if (_socket) {
+    return _socket;
+  }
 
-  await sock.bind("tcp://127.0.0.1:3000");
-  sock.subscribe("kitty cats");
-  console.log("Subscriber connected to port 3000");
+  const socket = new Router();
+  _socket = socket;
 
-  for await (const [topic, msg] of sock) {
-    console.log(
-      "received a message related to:",
-      topic,
-      "containing message:",
-      msg,
-    );
+  await socket.bind(getEnvValue("SOCKET_ADDR"));
+
+  return socket;
+}
+
+async function start() {
+  const socket = await getSocket();
+
+  for await (const [sender, _blank, header, ..._rest] of socket) {
+    const message = OutpostMessage.decode(header);
+    switch (message.type) {
+      case OutpostMessageType.OUTPOST_MESSAGE_TYPE_CONNECT: {
+        console.log("CONNECT", new Date().toISOString());
+
+        console.log(PriceMessage.decode(message.body));
+
+        break;
+      }
+      default: {
+        console.log("UNKNOWN");
+      }
+    }
+    // console.log(sender.toString(), header.toString());
+    senders[header.toString()] = sender;
   }
 }
 
-run();
+start();

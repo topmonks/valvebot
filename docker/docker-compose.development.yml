@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  hub:
+    init: true
+    command: package/hub/dist/index.js
+    environment: 
+      SOCKET_ADDR: tcp://0.0.0.0:3000
+    ports:
+      - "3000:3000"
+    build:
+      context: ../
+      dockerfile: ./docker/build.Dockerfile
+
+  outpost-binance:
+    init: true
+    command: package/outpost/binance/dist/index.js
+    environment: 
+      SOCKET_ADDR: tcp://hub:3000
+    build:
+      context: ../
+      dockerfile: ./docker/build.Dockerfile

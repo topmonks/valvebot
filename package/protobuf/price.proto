@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message Price {
-    string price = 1;
-    string date = 2;
-}

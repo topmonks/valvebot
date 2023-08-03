@@ -2,3 +2,4 @@ node_modules
 dist
 *.tsbuildinfo
 package/protobuf/generated
+env/*.env.local*

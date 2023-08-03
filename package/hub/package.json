@@ -4,16 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node",
-    "dev": "nodemon",
+    "test": "jest --config ../chore/jest.config.js --rootDir .",
+    "serve": "DOTENV_CONFIG_PATH=../../env/.env.local ts-node",
     "build": "rm -rf dist && tsc --build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "20.4.5",
-    "nodemon": "3.0.1",
     "ts-node": "10.9.1",
     "typescript": "5.1.6"
   },

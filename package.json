@@ -5,12 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test --ws --if-present",
-    "build": "tsc --build --clean && tsc --build"
+    "docker-compose:development": "docker-compose -p valvebot-development --file ./docker/docker-compose.development.yml",
+    "build": "tsc --build --clean && tsc --build",
+    "build:watch": "npm run build -- --watch >/dev/null",
+    "dev": "tsc --build --clean && concurrently --names 'build,hub,outpost:binance' \"npm run build:watch\" \"wait-on package/hub/dist/index.js && npm run dev:hub\" \"wait-on package/outpost/binance/dist/index.js && npm run dev:outpost:binance\"",
+    "dev:generic": "DOTENV_CONFIG_PATH=./env/.env.local node --watch -r dotenv/config",
+    "dev:hub": "npm run dev:generic -- package/hub/dist",
+    "dev:outpost:binance": "npm run dev:generic -- package/outpost/binance/dist"
   },
   "author": "",
   "license": "ISC",
   "workspaces": [
     "package/*",
     "package/outpost/*"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "8.2.0",
+    "wait-on": "7.0.1"
+  }
 }

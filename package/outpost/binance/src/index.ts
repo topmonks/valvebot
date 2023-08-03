@@ -1,19 +1,36 @@
-import { Price } from "@topmonks/valvebot-protobuf/generated/ts/price";
-import { Dealer, Publisher } from "zeromq";
+import {
+  OutpostMessageType,
+  PriceMessage,
+  OutpostMessage,
+} from "@topmonks/valvebot-protobuf";
+import { getEnvValue, outpost } from "@topmonks/valvebot-lib";
 
-async function run() {
-  const sock = new Publisher();
+const m = OutpostMessage.fromPartial({
+  type: OutpostMessageType.OUTPOST_MESSAGE_TYPE_CONNECT,
+  body: PriceMessage.encode(
+    PriceMessage.fromPartial({
+      price: "1",
+      date: new Date().toISOString(),
+    }),
+  ).finish(),
+});
 
-  sock.connect("tcp://127.0.0.1:3000");
-  console.log("Publisher bound to port 3000");
+setInterval(async () => {
+  try {
+    const socket = outpost.getSocket(getEnvValue("SOCKET_ADDR"));
+    await socket.send([null, OutpostMessage.encode(m).finish()]);
+  } catch (e) {
+    console.error(e);
+  }
+}, 2000);
 
-  while (true) {
-    console.log("sending a multipart message envelope");
-    await sock.send(["kitty cats", "meow!"]);
-    await new Promise((resolve) => {
-      setTimeout(resolve, 500);
-    });
+async function connect() {
+  const socket = outpost.getSocket(getEnvValue("SOCKET_ADDR"));
+  await socket.send([null, OutpostMessage.encode(m).finish()]);
+
+  for await (const [_blank, header, ..._rest] of socket) {
+    console.log(header.toString());
   }
 }
 
-run();
+connect();
