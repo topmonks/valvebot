@@ -1,0 +1,20 @@
+{
+  "name": "@topmonks/valvebot-outpost-injective",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "serve": "NODE_OPTIONS=--openssl-legacy-provider NODE_NO_WARNINGS=1 ts-node",
+    "build": "rm -rf dist && tsc --build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.4.5",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  },
+  "dependencies": {
+    "zeromq": "6.0.0-beta.17"
+  }
+}

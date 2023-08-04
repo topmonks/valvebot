@@ -8,6 +8,9 @@
             "path": "package/outpost/binance"
         },
         {
+            "path": "package/outpost/injective"
+        },
+        {
             "path": "package/protobuf"
         },
         {

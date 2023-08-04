@@ -1,0 +1,12 @@
+{
+  "extends": "../../chore/tsconfig.json",
+  "references": [
+    {
+      "path": "../../protobuf"
+    }
+  ],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  }
+}

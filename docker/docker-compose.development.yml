@@ -20,3 +20,12 @@ services:
     build:
       context: ../
       dockerfile: ./docker/build.Dockerfile
+
+  outpost-injective:
+    init: true
+    command: package/outpost/injective/dist/index.js
+    environment: 
+      SOCKET_ADDR: tcp://hub:3000
+    build:
+      context: ../
+      dockerfile: ./docker/build.Dockerfile

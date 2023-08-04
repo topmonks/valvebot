@@ -2,16 +2,18 @@
   "name": "@topmonks/valvebot",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "npm test --ws --if-present",
     "docker-compose:development": "docker-compose -p valvebot-development --file ./docker/docker-compose.development.yml",
-    "build": "tsc --build --clean && tsc --build",
+    "clean": "tsc --build --clean",
+    "build:proto": "npm -w @topmonks/valvebot-protobuf run protoc",
+    "build": "npm run clean && npm run build:proto && tsc --build",
     "build:watch": "npm run build -- --watch >/dev/null",
-    "dev": "tsc --build --clean && concurrently --names 'build,hub,outpost:binance' \"npm run build:watch\" \"wait-on package/hub/dist/index.js && npm run dev:hub\" \"wait-on package/outpost/binance/dist/index.js && npm run dev:outpost:binance\"",
+    "dev": "npm run clean && concurrently --names 'build,hub,outpost:binance,outpost:injective' \"npm run build:watch\" \"wait-on package/hub/dist/index.js && npm run dev:hub\" \"wait-on package/outpost/binance/dist/index.js && npm run dev:outpost:binance\" \"wait-on package/outpost/injective/dist/index.js && npm run dev:outpost:injective\"",
     "dev:generic": "DOTENV_CONFIG_PATH=./env/.env.local node --watch -r dotenv/config",
     "dev:hub": "npm run dev:generic -- package/hub/dist",
-    "dev:outpost:binance": "npm run dev:generic -- package/outpost/binance/dist"
+    "dev:outpost:binance": "npm run dev:generic -- package/outpost/binance/dist",
+    "dev:outpost:injective": "npm run dev:generic -- package/outpost/injective/dist"
   },
   "author": "",
   "license": "ISC",
