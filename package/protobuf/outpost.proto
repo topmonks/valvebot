@@ -5,6 +5,7 @@ enum OutpostMessageType {
   OUTPOST_MESSAGE_TYPE_HEARTBEAT = 1;
   OUTPOST_MESSAGE_TYPE_CONNECT = 2;
   OUTPOST_MESSAGE_TYPE_PRICE = 3;
+  OUTPOST_MESSAGE_TYPE_BALANCE = 4;
 }
 
 message OutpostMessage {
@@ -20,4 +21,10 @@ message ConnectMessage {
 message PriceMessage {
   string price = 1;
   string date = 2;
+}
+
+message BalanceMessage {
+  string amount = 1;
+  string denom = 2;
+  string date = 3;
 }

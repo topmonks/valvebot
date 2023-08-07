@@ -21,8 +21,8 @@
     "@cosmjs/cosmwasm-stargate": "0.31.0",
     "@cosmjs/proto-signing": "0.31.0",
     "chain-registry": "1.18.1",
-    "decimal.js": "^10.4.3",
-    "ramda": "^0.29.0",
+    "decimal.js": "10.4.3",
+    "ramda": "0.29.0",
     "zeromq": "6.0.0-beta.17"
   }
 }

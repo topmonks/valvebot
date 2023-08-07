@@ -1,38 +1,27 @@
 import {
   OutpostMessageType,
-  PriceMessage,
   OutpostMessage,
   ConnectMessage,
 } from "@topmonks/valvebot-protobuf";
 import { getEnvValue, outpost } from "@topmonks/valvebot-lib";
 import { id } from "./config";
-import { getPrice } from "./dex";
+import injPrice from "./loop/inj-price";
+import injBalance from "./loop/account-inj-balance";
+import { nextTick } from "process";
+import { setTimeout } from "timers/promises";
 
-async function checkPrice() {
-  const amountIn = (1e18).toString();
-  const denom = "inj";
-  const date = new Date().toISOString();
-
-  const amountOut = await getPrice(amountIn, denom);
-
-  const priceMessage = OutpostMessage.fromPartial({
-    type: OutpostMessageType.OUTPOST_MESSAGE_TYPE_PRICE,
-    body: PriceMessage.encode(
-      PriceMessage.fromPartial({
-        price: amountOut,
-        date: date,
-      }),
-    ).finish(),
-  });
-
-  const socket = outpost.getSocket(getEnvValue("HUB_SOCKET_ADDR"));
-  await socket.send([null, OutpostMessage.encode(priceMessage).finish()]);
+function repeatCheckInjBalance() {
+  Promise.all([injBalance(), setTimeout(1000)])
+    .catch((e) => console.error(e))
+    .finally(() => nextTick(repeatCheckInjBalance));
 }
 
+repeatCheckInjBalance();
+
 function repeatCheckPrice() {
-  checkPrice()
+  Promise.all([injPrice(), setTimeout(0)])
     .catch((e) => console.error(e))
-    .finally(repeatCheckPrice);
+    .finally(() => nextTick(repeatCheckPrice));
 }
 
 repeatCheckPrice();

@@ -1,6 +1,6 @@
 import { cosmos, getEnvValue } from "@topmonks/valvebot-lib";
 import { OutpostInjectiveError } from "./error";
-import { dex } from "./config";
+import { chainId, dex } from "./config";
 
 export async function getAstroportPool() {
   return cosmos.withClient<Promise<cosmos.astroport.PoolInfo>>(
@@ -12,7 +12,7 @@ export async function getAstroportPool() {
 
       return poolInfo;
     },
-    getEnvValue("OUTPOST_INJECTIVE_CHAIN_ID"),
+    chainId,
   );
 }
 

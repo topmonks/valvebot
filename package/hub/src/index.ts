@@ -1,5 +1,6 @@
 import { Router } from "zeromq";
 import {
+  BalanceMessage,
   OutpostMessage,
   OutpostMessageType,
   PriceMessage,
@@ -34,9 +35,16 @@ async function start() {
         break;
       }
       case OutpostMessageType.OUTPOST_MESSAGE_TYPE_PRICE: {
-        console.log("Price message", new Date().toISOString());
+        console.log("Price message");
 
         console.log(PriceMessage.decode(message.body));
+
+        break;
+      }
+      case OutpostMessageType.OUTPOST_MESSAGE_TYPE_BALANCE: {
+        console.log("Balance message");
+
+        console.log(BalanceMessage.decode(message.body));
 
         break;
       }
