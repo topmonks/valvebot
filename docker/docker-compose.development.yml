@@ -5,7 +5,7 @@ services:
     init: true
     command: package/hub/dist/index.js
     environment: 
-      SOCKET_ADDR: tcp://0.0.0.0:3000
+      HUB_SOCKET_ADDR: tcp://0.0.0.0:3000
     ports:
       - "3000:3000"
     build:
@@ -16,7 +16,10 @@ services:
     init: true
     command: package/outpost/binance/dist/index.js
     environment: 
-      SOCKET_ADDR: tcp://hub:3000
+      HUB_SOCKET_ADDR: tcp://hub:3000
+      OUTPOST_BINANCE_TIMEOUT: 3000
+      OUTPOST_BINANCE_PAIR: INJ/USDT
+
     build:
       context: ../
       dockerfile: ./docker/build.Dockerfile
@@ -25,7 +28,12 @@ services:
     init: true
     command: package/outpost/injective/dist/index.js
     environment: 
-      SOCKET_ADDR: tcp://hub:3000
+      HUB_SOCKET_ADDR: tcp://hub:3000
+      OUTPOST_INJECTIVE_CHAIN_ID: injective-1
+      OUTPOST_INJECTIVE_DEX: ASTROPORT
+      OUTPOST_INJECTIVE_PAIR: INJUSDT
+      OUTPOST_INJECTIVE_TIMEOUT: 1500
+      OUTPOST_INJECTIVE_ASTROPORT_INJUSDT_ADDR: inj1d7ru9e8qcs70qp97ffwgya7lt5qpe7r646nufu
     build:
       context: ../
       dockerfile: ./docker/build.Dockerfile

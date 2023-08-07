@@ -17,7 +17,7 @@ async function getSocket() {
   const socket = new Router();
   _socket = socket;
 
-  await socket.bind(getEnvValue("SOCKET_ADDR"));
+  await socket.bind(getEnvValue("HUB_SOCKET_ADDR"));
 
   return socket;
 }

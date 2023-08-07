@@ -25,7 +25,7 @@ async function checkPrice() {
     ).finish(),
   });
 
-  const socket = outpost.getSocket(getEnvValue("SOCKET_ADDR"));
+  const socket = outpost.getSocket(getEnvValue("HUB_SOCKET_ADDR"));
   await socket.send([null, OutpostMessage.encode(priceMessage).finish()]);
 }
 
@@ -38,7 +38,7 @@ function repeatCheckPrice() {
 repeatCheckPrice();
 
 async function connect() {
-  const socket = outpost.getSocket(getEnvValue("SOCKET_ADDR"));
+  const socket = outpost.getSocket(getEnvValue("HUB_SOCKET_ADDR"));
   const connectMessage = OutpostMessage.fromPartial({
     type: OutpostMessageType.OUTPOST_MESSAGE_TYPE_CONNECT,
     body: ConnectMessage.encode(
