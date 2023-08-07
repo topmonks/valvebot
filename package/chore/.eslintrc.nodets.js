@@ -12,6 +12,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "prefer-const": 0,
     "@typescript-eslint/no-unused-vars": [
       "warn", // or "error"
       {

@@ -31,6 +31,11 @@ async function start() {
       case OutpostMessageType.OUTPOST_MESSAGE_TYPE_CONNECT: {
         console.log("CONNECT", new Date().toISOString());
 
+        break;
+      }
+      case OutpostMessageType.OUTPOST_MESSAGE_TYPE_PRICE: {
+        console.log("Price message", new Date().toISOString());
+
         console.log(PriceMessage.decode(message.body));
 
         break;
