@@ -2,6 +2,7 @@
   "name": "@topmonks/valvebot",
   "version": "0.0.0",
   "description": "",
+  "private": true,
   "scripts": {
     "test": "npm test --ws --if-present",
     "docker-compose:development": "docker-compose -p valvebot-development --file ./docker/docker-compose.development.yml",
