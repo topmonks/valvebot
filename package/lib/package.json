@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@astroport/math": "0.3.0",
-    "@cosmjs/cosmwasm-stargate": "0.31.0",
+    "@cosmjs/cosmwasm-stargate": "0.31.1",
     "@cosmjs/proto-signing": "0.31.0",
     "chain-registry": "1.18.1",
     "decimal.js": "10.4.3",
