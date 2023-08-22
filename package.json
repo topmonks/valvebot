@@ -23,7 +23,7 @@
     "package/outpost/*"
   ],
   "devDependencies": {
-    "concurrently": "8.2.0",
+    "concurrently": "8.2.1",
     "wait-on": "7.0.1"
   }
 }
