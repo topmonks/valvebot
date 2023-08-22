@@ -17,7 +17,7 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
-    "@astroport/math": "0.3.0",
+    "@astroport/math": "0.5.1",
     "@cosmjs/cosmwasm-stargate": "0.31.1",
     "@cosmjs/proto-signing": "0.31.1",
     "chain-registry": "1.18.1",
