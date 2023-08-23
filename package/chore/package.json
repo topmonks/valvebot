@@ -27,6 +27,6 @@
     "tsconfig-paths": "4.2.0"
   },
   "dependencies": {
-    "dotenv-cli": "7.2.1"
+    "dotenv-cli": "7.3.0"
   }
 }
