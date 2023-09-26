@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "20.7.0",
-    "@types/ramda": "0.29.4",
+    "@types/ramda": "0.29.5",
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
   },
