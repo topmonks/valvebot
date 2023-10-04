@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ts-proto": "1.159.2"
+    "ts-proto": "1.159.3"
   },
   "dependencies": {
     "protobufjs": "7.2.5"
