@@ -1,5 +1,5 @@
 # build Typescript
-FROM node:20-alpine3.17 as ts-compiler
+FROM node:21-alpine3.17 as ts-compiler
 RUN apk add --no-cache protoc
 
 WORKDIR /usr/app
@@ -28,7 +28,7 @@ COPY package/protobuf ./package/protobuf/
 COPY . ./
 RUN npm run build
 
-FROM node:20-alpine3.17 as ts-remover
+FROM node:21-alpine3.17 as ts-remover
 WORKDIR /usr/app
 COPY --from=ts-compiler /usr/app/package*.json ./
 COPY --from=ts-compiler /usr/app/package/chore/package.json ./package/chore/
