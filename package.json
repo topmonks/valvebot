@@ -24,6 +24,6 @@
   ],
   "devDependencies": {
     "concurrently": "8.2.2",
-    "wait-on": "7.0.1"
+    "wait-on": "7.1.0"
   }
 }
