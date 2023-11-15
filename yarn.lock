@@ -6301,10 +6301,10 @@ zen-observable@0.8.15:
   resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.15.tgz#96415c512d8e3ffd920afd3889604e30b9eaac15"
   integrity sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==
 
-zeromq@6.0.0-beta.17:
-  version "6.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/zeromq/-/zeromq-6.0.0-beta.17.tgz#b9c98c2d8bdd98a47edd58e3193c4d1c0b6709d5"
-  integrity sha512-Tt5L2oBZ1WYsh0rgItpgFHzym5s8UWW7ZScSmwdfP8FP0GD0eJ0ZO0AOjmhqpSZEMQyMUbY5bc/6Xffw/hfkTQ==
+zeromq@6.0.0-beta.18:
+  version "6.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/zeromq/-/zeromq-6.0.0-beta.18.tgz#1c471bd14367803b2981567f4d41caeb56dd9ee2"
+  integrity sha512-AQa3c07ja2Xh1weqhYE31LIF4QZ8xfsksMQQ+NTLtHLxkK6j+BAW0jV/W8wMC3tyK6Qf0EOwJJ7UtwwMc8gW+A==
   dependencies:
     "@aminya/node-gyp-build" "4.5.0-aminya.4"
     cross-env "^7.0.3"
