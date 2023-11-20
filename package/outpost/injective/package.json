@@ -15,7 +15,7 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@injectivelabs/sdk-ts": "1.14.2",
+    "@injectivelabs/sdk-ts": "1.14.4",
     "zeromq": "6.0.0-beta.18"
   }
 }
