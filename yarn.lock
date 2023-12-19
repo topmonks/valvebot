@@ -39,10 +39,10 @@
     tslib "^2.3.0"
     zen-observable-ts "^1.2.5"
 
-"@astroport/math@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@astroport/math/-/math-0.5.1.tgz#ef4d10f60969b184fb9028e298fc263cd09b9768"
-  integrity sha512-FcXrVEpvEXggA4CQGGPueBRhog1rVHl2sO76dd5UvYVn9Xv3sx/MIGkYwbznqOk1cp4hvCE60tI0jtLV796JTw==
+"@astroport/math@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@astroport/math/-/math-1.0.1.tgz#46f6311ce9516c47f7a267e27c276bb6dc5daee4"
+  integrity sha512-twZVNyLKTz1uFgGuok2bLsZFeVE3DS2RmFbkb9lVZAM91yJfb8MuAUG17X353hTQIIduuwVgqIIDH00cbDvM/A==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.22.10", "@babel/code-frame@^7.22.5":
   version "7.22.10"
