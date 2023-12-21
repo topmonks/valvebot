@@ -2425,10 +2425,10 @@ case-anything@^2.1.13:
   resolved "https://registry.yarnpkg.com/case-anything/-/case-anything-2.1.13.tgz#0cdc16278cb29a7fcdeb072400da3f342ba329e9"
   integrity sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==
 
-chain-registry@1.24.1:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/chain-registry/-/chain-registry-1.24.1.tgz#e2e6cac787b69630fc6eb2f91c2407a3083f5efa"
-  integrity sha512-1jfGg4FQ95SFMZLMDoYZwPPxkkk1cowuqBg4Lod7AtRrmoImCfH7f4yWXarcvWOc2j/NyU7XXNQu+qCnrkjDJg==
+chain-registry@1.25.0:
+  version "1.25.0"
+  resolved "https://registry.yarnpkg.com/chain-registry/-/chain-registry-1.25.0.tgz#59df7fcfe5c05ac3e1291d801a58fa75b5c422ac"
+  integrity sha512-u+i64OW5hBRGc1HZtZRr7Givgnj0uvcRV1XnJjPMBcSkEP0zTuMWg032HX7wpuu8C47I6aosQ00CGFDLfKtzSQ==
   dependencies:
     "@babel/runtime" "^7.21.0"
     "@chain-registry/types" "^0.17.1"
