@@ -15,6 +15,6 @@
     "ts-proto": "1.166.2"
   },
   "dependencies": {
-    "protobufjs": "7.2.5"
+    "protobufjs": "7.2.6"
   }
 }
