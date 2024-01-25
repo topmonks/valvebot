@@ -346,10 +346,10 @@
     axios "^1.6"
     ws "^8.14"
 
-"@chain-registry/types@^0.17.1":
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/@chain-registry/types/-/types-0.17.1.tgz#0ac7bda6178d3917834578627f232a247fe5def8"
-  integrity sha512-O0CgrtJgIlqXvZm1CqDZe/7jZz068O/uuCIoyDXCegFHK03rdHacKcDGwEIUuI0MNUf8YV3jdE4xHQMSAX+79w==
+"@chain-registry/types@^0.18.0":
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/@chain-registry/types/-/types-0.18.0.tgz#68d91054a5b36ff621248f2843f3ff62dc9ade7f"
+  integrity sha512-jRFOKOMIAcA5Qp5cXEiAPyXs13WbSP19kvcb8qm5vaRwXvHMufPd/ZxLC80yq/LB62FeZeaVYfsjorLf3M6tTw==
   dependencies:
     "@babel/runtime" "^7.21.0"
 
@@ -2432,13 +2432,13 @@ case-anything@^2.1.13:
   resolved "https://registry.yarnpkg.com/case-anything/-/case-anything-2.1.13.tgz#0cdc16278cb29a7fcdeb072400da3f342ba329e9"
   integrity sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==
 
-chain-registry@1.26.0:
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/chain-registry/-/chain-registry-1.26.0.tgz#7422ed037bf9cb58c66f9ae00f91726b796977c7"
-  integrity sha512-GGcB1tHFBvpfBf5HIZ76kko+KvbK8ukG9a0fKNvnjoPRLxz8/7lTNebCCMr1DN/Y6lqpzWjzZRUmjFrUewWmsg==
+chain-registry@1.27.0:
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/chain-registry/-/chain-registry-1.27.0.tgz#d33affaa04130ba36ee2cdfd154bcd1e0e0622a2"
+  integrity sha512-bap61saasx2zU4nZ43W0l45ikYyA9abjF7/UdLcd9K7eJXVmuH5N18bPQh2qCNqqo0Gld5/mHkj21wz7y8KS2A==
   dependencies:
     "@babel/runtime" "^7.21.0"
-    "@chain-registry/types" "^0.17.1"
+    "@chain-registry/types" "^0.18.0"
 
 chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
